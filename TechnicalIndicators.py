@@ -34,3 +34,10 @@ class TechnicalIndicators:
         macd = ema_12 - ema_26
         signal = macd.ewm(span=9).mean()
         return macd, signal
+# To use the code use the Following 
+#data = pd.read_csv("stock_data.csv")
+#indicators = TechnicalIndicators(14, 14, 14, (12,26,9))
+#data['MA'] = indicators.moving_average(data)
+#data['RSI'] = indicators.relative_strength_index(data)
+#data['%K'], data['%D'] = indicators.stochastic_oscillator(data)
+#data['MACD'], data['Signal'] = indicators.macd(data)
